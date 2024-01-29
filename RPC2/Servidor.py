@@ -1,6 +1,10 @@
 from xmlrpc.server import SimpleXMLRPCServer
+from xmlrpc.server import SimpleXMLRPCRequestHandler
 from datetime import datetime
 import socket
+
+class RequestHandler(SimpleXMLRPCRequestHandler):
+    rpc_paths = ('/RPC2',)
 
 class MensagemServer:
     def __init__(self):
@@ -20,7 +24,7 @@ class MensagemServer:
         return datetime.now().strftime("%Y-%m-%d %H:%M")
 
 if __name__ == "__main__":
-    server = SimpleXMLRPCServer(('localhost', 8000), allow_none=True)
+    server = SimpleXMLRPCServer(('0.0.0.0', 8000), requestHandler=RequestHandler, allow_none=True)
     server.register_instance(MensagemServer())
 
     print("Servidor RPC rodando...")

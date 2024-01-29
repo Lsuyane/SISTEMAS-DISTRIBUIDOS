@@ -1,7 +1,7 @@
 from xmlrpc.client import ServerProxy
 
 def main():
-    server = ServerProxy("http://localhost:8000/")
+    server = ServerProxy("http://hostnamedoservidor:8000/RPC2")
 
     mensagem = "Olá, servidor RPC!"
     resultado_armazenamento = server.armazenar_mensagem(mensagem)
