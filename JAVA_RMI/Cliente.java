@@ -5,10 +5,8 @@ import java.util.List;
 public class ClienteMensagens {
     public static void main(String[] args) {
         try {
-            // Lookup para obter a referência remota do servidor
             ServicoMensagens servidor = (ServicoMensagens) Naming.lookup("rmi://localhost/ServicoMensagens");
 
-            // Invocação das funções remotas
             servidor.armazenarMensagem("Olá, servidor!");
             servidor.armazenarMensagem("Tudo bem?");
             
