@@ -45,7 +45,7 @@ class ServidorMensagensImpl extends UnicastRemoteObject implements ServicoMensag
 }
 
 // Classe principal do servidor
-public class ServidorMensagens {
+public class Servidor {
     public static void main(String[] args) {
         try {
             ServicoMensagens servidor = new ServidorMensagensImpl();
