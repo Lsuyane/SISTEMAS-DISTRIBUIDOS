@@ -2,7 +2,7 @@ import java.rmi.Naming;
 import java.util.List;
 
 // Classe principal do cliente
-public class ClienteMensagens {
+public class Cliente {
     public static void main(String[] args) {
         try {
             ServicoMensagens servidor = (ServicoMensagens) Naming.lookup("rmi://localhost/ServicoMensagens");
